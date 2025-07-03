@@ -1,0 +1,24 @@
+# Web backend
+fastapi
+uvicorn
+
+# LangChain + LangGraph
+langchain
+langgraph
+openai
+tiktoken
+
+# Snowflake DB connection
+snowflake-connector-python
+
+# Streamlit frontend
+streamlit
+requests
+pandas
+plotly
+
+# Prompt handling
+pydantic
+
+# Optional for environment management
+python-dotenv
