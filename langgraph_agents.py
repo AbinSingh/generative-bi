@@ -47,3 +47,17 @@ async def run_agent_chain(question, history):
     graph = build_langgraph()
     result = await graph.invoke({"question": question})
     return result["summary"], result.get("data", [])
+
+# to add context
+# async def run_agent_chain(question, history):
+#     graph = build_langgraph()
+#
+#     context_prompt = "\\n".join(f"User: {q}" for q in history[:-1])
+#     context_prompt += f"\\nUser (follow-up): {question}"
+#
+#     result = await graph.invoke({
+#         "question": question,
+#         "history_prompt": context_prompt  # pass if needed
+#     })
+#
+#     return result["summary"], result.get("data", [])
