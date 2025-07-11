@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 # from langgraph_agents import run_agent_chain
+import uvicorn
 
 app = FastAPI()
 
@@ -48,4 +49,8 @@ async def process_query(input_data: QueryInput):
     # Use mock response for now
     summary, data = run_agent_chain_mock(input_data.query, input_data.history)
     return {"summary": summary, "data": data}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=8000, reload=True)
+
 
